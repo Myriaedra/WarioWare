@@ -8,6 +8,7 @@ public class _04_Dash : MonoBehaviour {
 	public AnimationCurve myCurve;
 	bool dashing = false;
 	bool gameEnded = false;
+	Coroutine dash;
 
 	public AudioClip dashSound;
 	public AudioSource aS;
@@ -16,7 +17,7 @@ public class _04_Dash : MonoBehaviour {
 	{
 		if (Input.GetMouseButtonDown (0) && !dashing && !gameEnded) //If click and not currently dashing
 		{
-			StartCoroutine(Dash(aimScript.GetAimingPoint ())); //Start dash
+			dash = StartCoroutine(Dash(aimScript.GetAimingPoint ())); //Start dash
 			aS.PlayOneShot(dashSound);
 			dashing = true;
 		}
@@ -47,5 +48,7 @@ public class _04_Dash : MonoBehaviour {
 	public void StopControl()
 	{
 		gameEnded = true;
+		if (dash != null)
+			StopCoroutine (dash);
 	}
 }

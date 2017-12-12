@@ -5,9 +5,13 @@ using UnityEngine;
 public class _04_AimScript: MonoBehaviour {
 	public GameObject aimTarget;
 	Vector3 aimingPoint;
+	bool aimStop;
 
 	void Update () {
-		AimUpdate ();
+		if (!aimStop) 
+		{
+			AimUpdate ();
+		}
 	}
 
 	void AimUpdate()
@@ -28,5 +32,10 @@ public class _04_AimScript: MonoBehaviour {
 	public Vector3 GetAimingPoint() //Accessing the aiming point from another script
 	{
 		return aimingPoint;
+	}
+		
+	public void StopAiming()
+	{
+		aimStop = true;
 	}
 }
