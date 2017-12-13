@@ -8,6 +8,8 @@ public class _04_01_GameManager : MonoBehaviour {
 
 	public AudioSource aS;
 	public AudioClip victory;
+	public AudioClip begin;
+	public AudioClip attack;
 	public AudioClip defeat;
 
 	bool gameEnded;
@@ -15,6 +17,7 @@ public class _04_01_GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Cursor.visible = false;
+		aS.PlayOneShot (begin);
 	}
 	
 	// Update is called once per frame
@@ -28,6 +31,7 @@ public class _04_01_GameManager : MonoBehaviour {
 		{
 			playerDash.StopControl ();
 			aimScript.StopAiming ();
+			StartCoroutine (playerDash.DeathPlayer());
 			gameEnded = true;
 			aS.PlayOneShot (defeat);
 		
@@ -44,7 +48,8 @@ public class _04_01_GameManager : MonoBehaviour {
 			playerDash.StopControl ();
 			aimScript.StopAiming ();
 			gameEnded = true;
-			aS.PlayOneShot (victory);
+			aS.PlayOneShot (attack);
+			aS.PlayDelayed (0.1f);
 		
 
 			yield return new WaitForSeconds(2);

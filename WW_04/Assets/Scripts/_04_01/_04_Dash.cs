@@ -51,4 +51,17 @@ public class _04_Dash : MonoBehaviour {
 		if (dash != null)
 			StopCoroutine (dash);
 	}
+
+	public IEnumerator DeathPlayer()
+	{
+		transform.GetComponent<Rigidbody> ().isKinematic = true;
+		float rotated = 0f;
+		while (rotated <= 69.41f) 
+		{
+			rotated+=3;
+			transform.rotation = Quaternion.Euler(rotated, transform.eulerAngles.y, 0);
+			yield return null;
+		}
+
+	}
 }

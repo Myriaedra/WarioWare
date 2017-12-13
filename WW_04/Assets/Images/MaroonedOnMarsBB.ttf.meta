@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0239313398171f7498b877ce295fe9a2
+timeCreated: 1513199299
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: MaroonedOnMars BB
+  fontNames:
+  - MaroonedOnMars BB
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

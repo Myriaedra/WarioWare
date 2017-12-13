@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1810285591595206}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 4.05, z: -0}
+  m_LocalPosition: {x: 4, y: 4, z: 0.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,7 +54,7 @@ Light:
   m_Color: {r: 1, g: 0.7948276, b: 0.125, a: 1}
   m_Intensity: 9
   m_Range: 12.86
-  m_SpotAngle: 66.5
+  m_SpotAngle: 69
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -103,6 +103,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b278d573f317d479ba9646fdfebfa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingPoint: {fileID: 0}
+  endingPoint: {fileID: 0}
+  moveSpeed: 0.2
+  moveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!136 &136064310113875714
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -112,7 +133,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.9
-  m_Height: 4.42
+  m_Radius: 2.1
+  m_Height: 3.3
   m_Direction: 2
   m_Center: {x: 0, y: -5.684472e-16, z: 4.04}

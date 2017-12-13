@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class _04_Timer : MonoBehaviour {
+public class _04_01_Timer : MonoBehaviour {
 	public float timeLimit;
 	bool end = false;
 	public Text timeText;
+	public Slider timeBar;
 	// Use this for initialization
 	void Start () {
 		
@@ -22,7 +23,8 @@ public class _04_Timer : MonoBehaviour {
 		else if (!end)
 		{
 			float remainingTime = timeLimit - Time.time;
-			timeText.text = remainingTime.ToString("F0") ;
+			/*timeText.text = remainingTime.ToString("F0") ;*/
+			timeBar.value = remainingTime / timeLimit;
 		}
 	}
 }
