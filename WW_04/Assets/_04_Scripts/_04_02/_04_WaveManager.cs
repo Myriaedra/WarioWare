@@ -7,6 +7,7 @@ public class _04_WaveManager : MonoBehaviour {
 	public bool[] secondWave = new bool[20];
 	public bool[] thirdWave = new bool[20];
 	public bool[] fourthWave = new bool[20];
+	public float delay;
 
 	public GameObject missile;
 	Coroutine program;
@@ -26,21 +27,22 @@ public class _04_WaveManager : MonoBehaviour {
 		{
 			if (wave [i]) 
 			{
-				Instantiate (missile, transform.position, Quaternion.Euler (0, 0, i * 360 / wave.Length));
+				Instantiate (missile, new Vector3 (0,0,0), Quaternion.Euler (0, 0, i * 360 / wave.Length));
 			}
 		}
 	}
 
 	IEnumerator WavesProgramm()
 	{
+		yield return new WaitForSecondsRealtime (1f);
 		CallWave (firstWave);
-		yield return new WaitForSecondsRealtime(2f);
+		yield return new WaitForSecondsRealtime(delay);
 
 		CallWave (secondWave);
-		yield return new WaitForSecondsRealtime(2f);
+		yield return new WaitForSecondsRealtime(delay);
 
 		CallWave (thirdWave);
-		yield return new WaitForSecondsRealtime(2f);
+		yield return new WaitForSecondsRealtime(delay);
 
 		CallWave (fourthWave);
 	}

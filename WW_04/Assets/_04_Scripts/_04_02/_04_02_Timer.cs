@@ -8,9 +8,6 @@ public class _04_02_Timer : MonoBehaviour {
 	bool end = false;
 	public Slider timeBar;
 	// Use this for initialization
-	void Start () {
-
-	}
 
 	// Update is called once per frame
 	void Update () {
@@ -23,5 +20,10 @@ public class _04_02_Timer : MonoBehaviour {
 			float remainingTime = timeLimit - Time.time;
 			timeBar.value = 1-remainingTime / timeLimit;
 		}
+	}
+
+	public void End()
+	{
+		end = true;
 	}
 }

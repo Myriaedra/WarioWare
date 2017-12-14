@@ -5,7 +5,7 @@ using UnityEngine;
 public class _04_Satelite : MonoBehaviour {
 	public GameObject explosion;
 	public GameObject laser;
-	// Use this for initialization
+
 	void Start () {
 		
 	}

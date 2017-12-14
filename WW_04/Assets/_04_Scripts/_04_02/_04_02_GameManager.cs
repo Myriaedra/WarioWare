@@ -6,6 +6,7 @@ public class _04_02_GameManager : MonoBehaviour {
 	public _04_WaveManager waveMan;
 	public _04_Satelite satelite;
 	public _04_SatRotation satRotation;
+	public _04_02_Timer timerScript;
 
 	public AudioSource aS;
 	public AudioClip victory;
@@ -24,11 +25,12 @@ public class _04_02_GameManager : MonoBehaviour {
 		
 	}
 
-	public IEnumerator Loose()
+	public IEnumerator Lose()
 	{
 		if (!gameEnded) 
 		{
 			gameEnded = true;
+			timerScript.End ();
 
 			waveMan.StopWaves ();
 			//aS.PlayOneShot (defeat);

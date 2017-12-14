@@ -8,6 +8,7 @@ public class _04_Missile : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (Launch ());
+		Destroy (gameObject, 7f);
 	}
 	
 	// Update is called once per frame
@@ -35,7 +36,7 @@ public class _04_Missile : MonoBehaviour {
 			other.gameObject.GetComponent<_04_Satelite> ().Explodes ();
 			Explodes ();
 		}
-		StartCoroutine(Camera.main.GetComponent<_04_02_GameManager> ().Loose ());
+		StartCoroutine(Camera.main.GetComponent<_04_02_GameManager> ().Lose ());
 	}
 
 	void Explodes()

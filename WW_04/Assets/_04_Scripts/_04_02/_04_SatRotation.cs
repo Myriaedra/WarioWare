@@ -18,12 +18,12 @@ public class _04_SatRotation : MonoBehaviour {
 		{
 			if (Input.GetMouseButton (0)) {
 				orbit += orbitSpeed;
-				transform.rotation = Quaternion.Euler (0, 0, orbit);
+				transform.rotation = Quaternion.Euler (transform.eulerAngles.x, transform.eulerAngles.y, orbit);
 			} 
 
 			if (Input.GetMouseButton (1)) {
 				orbit -= orbitSpeed;
-				transform.rotation = Quaternion.Euler (0, 0, orbit);
+				transform.rotation = Quaternion.Euler (transform.eulerAngles.x, transform.eulerAngles.y, orbit);
 			}
 		}
 	}
